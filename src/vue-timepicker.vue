@@ -1616,7 +1616,7 @@ export default {
       let nearestDelta = -1
       for (let i = 0; i < this.tokenChunksPos.length; i++) {
         const chunk = JSON.parse(JSON.stringify(this.tokenChunksPos[i]))
-        if (chunk.start === startPos) {
+        if (chunk.start === startPos || chunk.end === startPos) {
           return chunk
         }
         const delta = Math.abs(chunk.start - startPos)
